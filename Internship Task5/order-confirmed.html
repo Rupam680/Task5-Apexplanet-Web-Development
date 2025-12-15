@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed</title>
+    <link rel="stylesheet" href="confirm.css">
+</head>
+<body>
+  <div class="container">
+    <div class="icon">✅</div>
+    <h1>Order Confirmed!</h1>
+    <p>Thank you for your purchase. Your order has been successfully placed.</p>
+
+    <div class="order-details">
+      <p><strong>Order ID:</strong> #ORD123456</p>
+      <p><strong>Date : </strong><span id="orderDate"></span></p>
+      <p><strong>Payment Method:</strong> Cash on Delivery</p>
+      <p><strong>Estimated Delivery:</strong> 3-5 Business Days</p>
+    </div>
+
+    <button class="btn" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+  <script>
+    // get today date
+    const today = new Date();
+    const options = {year: "numeric", month: 'long', day: 'numeric'}; // date pattern
+    const orderDate = document.getElementById('orderDate').textContent = today.toLocaleDateString('en-US',options); // show in my UI
+    
+  </script>
+</body>
+</html>

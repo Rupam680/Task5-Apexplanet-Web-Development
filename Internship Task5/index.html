@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page | Apex Planet Pvt Ltd</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PRODUCT LISTING PAGE</h1>
+        <div class="user-details">
+            <button class="login" id="login">Login</button>
+            <button class="signup" id="signup">SignUp</button>
+            <img src="image/myphoto.jpg"alt="user" id="userPic">
+           <button id="cartBtn">🛒Cart (<span id="cartCount">0</span>)</button>
+        </div>
+    </header>
+    <!-- filter section -->
+     
+     <section class="controls">
+        <div class="filter">
+            <label for="category">Filter By Category :</label>
+            <select  id="category">
+                <option value="All">All</option>
+                <option value="Electronics">Electronic Device</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Home">Home</option>
+                <option value="Skin Care">Skin Care</option>
+                <option value="Health">Health</option>
+            </select>
+        </div>
+
+        <!-- sorting section -->
+         <div class="sort">
+            <label for="sort">Sort By price :</label>
+            <select id="sort">
+                <option value="default">Default</option>
+                <option value="Low To High">Low To High</option>
+                <option value="High To Low">High To Low</option>
+            </select>
+         </div>
+     </section>
+
+    <!-- product list section -->
+     <section class="product-list" id="product-list"></section>
+
+     <!-- here we shown the cart item name total price and and total cart item -->
+    <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <h2>Your Cart</h2>
+      <ul id="cartItems"></ul>
+      <p id="cartTotal"></p>
+      <button id="closeCart">Remove</button>
+      <button id="buyBtn">Buy Now</button>
+    </div>
+  </div>
+     <script src="script.js"></script>
+</body>
+</html>

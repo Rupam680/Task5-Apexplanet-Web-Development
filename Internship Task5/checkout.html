@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Cart Details | Apex Planet software Pvt Ltd</title>
+    <link rel="stylesheet" href="checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-box">
+      <h2>Your Cart Details</h2>
+      <ul id="checkoutItems"></ul>
+      <p id="checkoutTotal"></p>
+      <button id="confirmOrder">Confirm Order</button>
+    </div>
+    <script>
+      // here we take a reference
+      // retrieve cart item from local storage
+      const CartData = JSON.parse(localStorage.getItem("CartData"));
+      const checkoutItem = document.getElementById("checkoutItems");
+      const checkoutTotal = document.getElementById("checkoutTotal");
+
+      // here we get total cart
+      let total = 0;
+      // check if cart will not available
+      if (CartData.length === 0) {
+        checkoutItem.innerHTML = "<p>Your Cart is empty</p>";
+      } else {
+        CartData.forEach((item) => {
+          total += item.price; // after item added into cart then update my total price
+          const li = document.createElement("li");
+          // we show the cart / product details
+          li.textContent = `${item.name} - ₹${item.price}`;
+          checkoutItem.appendChild(li);
+        });
+        checkoutTotal.textContent = `Total: ₹${total}`; // show the total price
+      }
+      // for confirm order part
+      const orderConfirm = document.getElementById("confirmOrder");
+      orderConfirm.addEventListener("click", () => {
+        window.location.href = "order-confirmed.html";
+      });
+    </script>
+  </body>
+</html>
